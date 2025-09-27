@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "../ui/Button";
 import { ChevronUp, ChevronDown } from "lucide-react"; 
 
 const Expand = ({ x }) => {
@@ -9,9 +8,9 @@ const Expand = ({ x }) => {
     <div className="border p-2 rounded">
       <div className="flex justify-between item-center">
         <span className="text-lg">{x.title}</span>
-        <Button onClick={() => setExpanded(!expanded)}>
+        <button onClick={() => setExpanded(!expanded)}>
           {expanded ? <ChevronUp /> : <ChevronDown />}
-        </Button>
+        </button>
       </div>
 
       {expanded && (

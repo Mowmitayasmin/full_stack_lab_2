@@ -1,6 +1,5 @@
 import { useState } from "react";
 import employeesJson from "../../data/employees.json";
-import { Input } from "../ui/Input";
 
 interface EmployeeDepartment {
   department: string;
@@ -39,7 +38,7 @@ export function EmployeeList() {
   return (
     <main>
       <h2>Employee Directory</h2>
-      <Input
+      <input
         type="text"
         placeholder="Search by department..."
         value={searchTerm}
