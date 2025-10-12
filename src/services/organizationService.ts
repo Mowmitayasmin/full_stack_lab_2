@@ -28,10 +28,6 @@ export async function ValidateRole(role: Organizationdata) {
       "description",
       "Description must be at least 3 characters long"
     );
-  console.log(
-    "roles",
-    roles.some((r) => r.title === role.title)
-  );
   if (roles.some((r) => r.title === role.title)) {
     validationErrors.set("title", "Role already exists");
   }

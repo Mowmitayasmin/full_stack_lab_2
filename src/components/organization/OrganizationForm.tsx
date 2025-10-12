@@ -16,7 +16,6 @@ const EntryForm = ({ formMode, id }: RoleFormProps) => {
 
   useEffect(() => {
     if (formMode == "update" && id) {
-      console.log("id", id);
       const editedRole = organizationdata.find((x) => x.id == id);
       if (editedRole) {
         setTitle(editedRole.title);

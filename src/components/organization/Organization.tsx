@@ -9,7 +9,6 @@ const Organization = () => {
     []
   );
   const handleDelete = async (id: string | number) => {
-    console.log("🚀 ~ handleDelete ~ id:", id);
     await OrganizationService.deleteRole(id);
     await fetchRoles();
     toast("Successfully deleted Role!", {
