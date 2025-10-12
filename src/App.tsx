@@ -5,6 +5,9 @@ import { EmployeeList } from "./components/employee-list/EmployeeList";
 import { Footer } from "./components/footer/footer";
 import Header from "./components/header/Header";
 import Organization from "./components/organization/Organization";
+import CreateRole from "./components/organization/CreateRole";
+import { ToastContainer } from "react-toastify";
+import UpdateRole from "./components/organization/UpdateRole";
 
 function NotFound() {
   return <h2>Page Not Found</h2>;
@@ -19,9 +22,13 @@ function App() {
         <Route path="/" element={<EmployeeList />} />
         <Route path="/organization" element={<Organization />} />
         <Route path="/employees" element={<EmployeeList />} />
+        <Route path="/create-role" element={<CreateRole />} />
+        <Route path=":id/edit" element={<UpdateRole />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+
+      <ToastContainer />
     </>
   );
 }
