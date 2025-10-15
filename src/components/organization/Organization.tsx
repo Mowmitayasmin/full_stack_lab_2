@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import * as OrganizationService from "../../services/organizationService";
 import { toast } from "react-toastify";
 const Organization = () => {
-  const { filteredData, setSearchRole, searchRole, fetchRoles } = useEntryForm(
+  const { filteredData, setSearchstr, searchStr, fetchRoles } = useEntryForm(
     []
   );
   const handleDelete = async (id: string | number) => {
@@ -25,8 +25,8 @@ const Organization = () => {
         <input
           type="text"
           placeholder="Search..."
-          value={searchRole}
-          onChange={(e) => setSearchRole(e.target.value)}
+          value={searchStr}
+          onChange={(e) => setSearchstr(e.target.value)}
           className="flex-grow border px-3 py-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         <Link to="/create-role">
