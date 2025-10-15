@@ -8,13 +8,13 @@ export interface Organizationdata {
 }
 
 export function useEntryForm(dependencies: unknown[]) {
-  const [searchRole, setSearchRole] = useState("");
+  const [searchStr, setSearchstr] = useState("");
   const [organizationdata, setOrganizationData] = useState<Organizationdata[]>(
     []
   );
 
   const filteredData = organizationdata.filter((item) =>
-    item.title.toLowerCase().includes(searchRole.toLowerCase())
+    item.title.toLowerCase().includes(searchStr.toLowerCase())
   );
   const [error, setError] = useState<string | null>();
   const fetchRoles = async () => {
@@ -25,16 +25,16 @@ export function useEntryForm(dependencies: unknown[]) {
       setError(`${errorObject}`);
     }
   };
+
   useEffect(() => {
     fetchRoles();
   }, [...dependencies]);
-
   return {
     error,
     organizationdata,
     filteredData,
-    setSearchRole,
-    searchRole,
+    setSearchstr,
+    searchStr,
     setOrganizationData,
     fetchRoles,
   };
